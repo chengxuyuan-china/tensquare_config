@@ -1,0 +1,40 @@
+server:
+  port: 9010
+
+spring:
+  application:
+    name: tensquare-manager
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka
+  instance:
+    prefer-ip-address: true
+
+# 配置zuul网关
+zuul:
+  routes:
+    tensquare-base:
+      path: /base/** #路径中包含这个，便转发
+      serviceId: tensquare-base #转发的地址
+    tensquare-article:
+      path: /article/** #路径中包含这个，便转发
+      serviceId: tensquare-article #转发的地址
+    tensquare-friend:
+      path: /friend/** #路径中包含这个，便转发
+      serviceId: tensquare-friend #转发的地址
+    tensquare-gathering:
+      path: /gathering/** #路径中包含这个，便转发
+      serviceId: tensquare-gathering #转发的地址
+    tensquare-qa:
+      path: /qa/** #路径中包含这个，便转发
+      serviceId: tensquare-qa #转发的地址
+    tensquare-recruit:
+      path: /recruit/** #路径中包含这个，便转发
+      serviceId: tensquare-recruit #转发的地址
+    tensquare-spit:
+      path: /spit/** #路径中包含这个，便转发
+      serviceId: tensquare-spit #转发的地址
+    tensquare-user:
+      path: /user/** #路径中包含这个，便转发
+      serviceId: tensquare-user #转发的地址

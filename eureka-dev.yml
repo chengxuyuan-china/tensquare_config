@@ -1,0 +1,10 @@
+server:
+  port: 6868
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka # 服务发送地址
+    register-with-eureka: false
+    fetch-registry: false
+

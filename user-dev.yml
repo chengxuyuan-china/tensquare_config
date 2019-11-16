@@ -1,0 +1,30 @@
+server:
+  port: 9008
+spring:
+  application:
+    name: tensquare-user #指定服务名
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.8.128:3306/tensquare_user?characterEncoding=UTF8
+    username: root
+    password: root
+  jpa:
+    database: MySQL
+    show-sql: true
+
+  redis:
+    host: 192.168.8.128 # 配置redis
+  rabbitmq:
+    host: 192.168.8.128 # 配置 rabbitmq
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka # 服务发送地址
+  instance:
+    prefer-ip-address: true # 允许跨域访问
+
+# 配置jwt盐与过期时间
+jwt:
+  config:
+    key: sizhibo
+    ttl: 600000
